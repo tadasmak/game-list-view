@@ -5,5 +5,11 @@
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-router-dom": "^7.12.0"
+  },
+  "scripts": {
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets --loader:.js=jsx --watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.2"
   }
 }
