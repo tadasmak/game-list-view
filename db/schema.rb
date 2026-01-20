@@ -10,8 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 0) do
+ActiveRecord::Schema[8.0].define(version: 2026_01_20_231419) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
+  create_table "games", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.integer "platform"
+    t.integer "region"
+    t.string "image_url"
+    t.decimal "base_price"
+    t.decimal "current_price"
+    t.integer "discount_percent"
+    t.boolean "has_cashback"
+    t.decimal "cashback_amount"
+    t.integer "likes_count"
+  end
 end
