@@ -8,3 +8,9 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+ html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
