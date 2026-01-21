@@ -1,8 +1,8 @@
 class Game < ApplicationRecord
-    enum platform: {
+    enum :platform, {
         ea_games: 0,
         steam: 1,
-        epic_games: 2
+        epic_games: 2,
         xbox_live: 3,
         xbox_series: 4,
         playstation_4: 5,
@@ -11,7 +11,7 @@ class Game < ApplicationRecord
         nintendo_switch_2: 8
     }
 
-    enum region: {
+    enum :region, {
         global: 0,
         europe: 1,
         asia: 2,
