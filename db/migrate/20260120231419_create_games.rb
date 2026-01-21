@@ -8,10 +8,10 @@ class CreateGames < ActiveRecord::Migration[8.0]
       t.string "image_url"
       t.decimal "base_price", precision: 9, scale: 2
       t.decimal "current_price", precision: 9, scale: 2
-      t.integer "discount_percent"
-      t.boolean "has_cashback", default: false
+      t.integer "discount_percent", default: 0, null: false
+      t.boolean "has_cashback", default: false, null: false
       t.decimal "cashback_amount", precision: 9, scale: 2
-      t.integer "likes_count"
+      t.integer "likes_count", default: 0, null: false
     end
 
     add_index :games, :title
