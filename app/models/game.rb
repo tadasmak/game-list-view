@@ -10,4 +10,14 @@ class Game < ApplicationRecord
         nintendo_switch: 7,
         nintendo_switch_2: 8
     }
+
+    enum region: {
+        global: 0,
+        europe: 1,
+        asia: 2,
+        africa: 3,
+        north_america: 4,
+        south_america: 5,
+        australia: 6
+    }
 end
