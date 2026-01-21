@@ -27,5 +27,8 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_20_231419) do
     t.boolean "has_cashback", default: false
     t.decimal "cashback_amount", precision: 9, scale: 2
     t.integer "likes_count"
+    t.index ["platform"], name: "index_games_on_platform"
+    t.index ["region"], name: "index_games_on_region"
+    t.index ["title"], name: "index_games_on_title"
   end
 end

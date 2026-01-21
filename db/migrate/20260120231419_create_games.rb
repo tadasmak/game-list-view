@@ -13,5 +13,9 @@ class CreateGames < ActiveRecord::Migration[8.0]
       t.decimal "cashback_amount", precision: 9, scale: 2
       t.integer "likes_count"
     end
+
+    add_index :games, :title
+    add_index :games, :platform
+    add_index :games, :region
   end
 end
