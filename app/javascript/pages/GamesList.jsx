@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import GameCard from "../components/GameCard";
 
 export default function GamesList() {
     const [games, setGames] = useState([]);
@@ -33,8 +34,9 @@ export default function GamesList() {
             <span>12</span> {/* TODO: add actual result counter from API */}
             {games.map(game => (
                 <div key={game.id} className="border p-4 rounded">
-                    <h2 className="text-xl font-semibold">{game.title}</h2>
-                    
+                    <GameCard
+                        title={game.title}
+                    />
                 </div>
             ))}
         </div>
