@@ -30,11 +30,11 @@ export default function GamesList() {
 
     return (
         <div className="mt-4">
-            <span>Results found: </span>
-            <span>12</span> {/* TODO: add actual result counter from API */}
-            {games.map(game => (
-                <div key={game.id} className="border p-4 rounded">
+            <p className="mb-4">Results found: <span className="mb-2">{games.length}</span></p> {/* TODO: add actual result counter from API */}
+            <div className="flex flex-wrap justify-between gap-4">
+                {games.map(game => (
                     <GameCard
+                        key={game.id}
                         id={game.id}
                         title={game.title}
                         platform={game.platform}
@@ -47,8 +47,8 @@ export default function GamesList() {
                         cashback_amount={game.cashback_amount}
                         likes_count={game.likes_count}
                     />
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
     );
 } 
