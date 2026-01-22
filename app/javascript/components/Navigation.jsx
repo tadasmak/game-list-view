@@ -5,9 +5,13 @@ import { HeartIcon, ShoppingCartIcon, CircleUserIcon } from "lucide-react";
 export default function Navigation() {
     return (
         <div className="flex height-full width-full py-8">
-            <div className="flex items-center w-3/4">
-                <img src="/images/logo-white.png" className="h-auto mr-4" width="140px" />
+            <div className="flex items-center gap-4 w-3/4">
+                <img src="/images/logo-white.png" className="h-auto" width="140px" />
                 <SearchBar />
+                <div>
+                    <span className="text-xl mr-2">🇱🇹</span>
+                    <span>English EU | EUR</span>
+                </div>
             </div>
             <div className="flex justify-end items-center gap-4 w-1/4">
                 <HeartIcon className="cursor-pointer" width={28} height={28} />
