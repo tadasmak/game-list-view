@@ -35,7 +35,17 @@ export default function GamesList() {
             {games.map(game => (
                 <div key={game.id} className="border p-4 rounded">
                     <GameCard
+                        id={game.id}
                         title={game.title}
+                        platform={game.platform}
+                        region={game.region}
+                        image_url={game.image_url}
+                        base_price={game.base_price}
+                        current_price={game.current_price}
+                        discount_percent={game.discount_percent}
+                        has_cashback={game.has_cashback}
+                        cashback_amount={game.cashback_amount}
+                        likes_count={game.likes_count}
                     />
                 </div>
             ))}
