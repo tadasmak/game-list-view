@@ -1,4 +1,6 @@
 class Game < ApplicationRecord
+    include Searchable
+
     enum :platform, {
         ea_games: 0,
         steam: 1,
