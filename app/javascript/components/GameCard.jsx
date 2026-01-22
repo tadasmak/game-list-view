@@ -4,7 +4,7 @@ import { InfoIcon, HeartIcon } from "lucide-react";
 
 export default function GameContainer(game) {
     return (
-        <Link to={`/games/${game.id}`} className="flex flex-col flex-[1_0_21%] border-1 border-[#63E3C1]">
+        <Link to={`/games/${game.id}`} className="flex flex-col w-[49%] md:w-[32%] lg:w-[24%] border-1 border-[#63E3C1]">
             <img src={game.image_url} className="w-full" />
             <div className="bg-[#1F0A4D] text-sm text-[#9F96B7] font-bold px-3 py-2">
                 <div className="leading-6 h-[72px] mb-1">
