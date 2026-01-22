@@ -42,7 +42,7 @@ export default function GamesList() {
     return (
         <div className="mt-4">
             <p className="mb-4">Results found: <span className="mb-2">{games.length}</span></p> {/* TODO: add actual result counter from API */}
-            <div className="flex flex-wrap justify-between gap-y-4">
+            <div className="flex flex-wrap gap-x-[1%] gap-y-4">
                 {games.map(game => (
                     <GameCard
                         key={game.id}
