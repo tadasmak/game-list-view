@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import GameCard from "../components/GameCard";
 
 export default function GamesList() {
@@ -6,8 +7,18 @@ export default function GamesList() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const [searchParams, setSearchParams] = useSearchParams();
+
     useEffect(() => {
-        fetch("/list")
+        setLoading(true);
+
+        const params = {
+            query: searchParams.get("query") || ""
+        }
+
+        const query = new URLSearchParams(params).toString();
+
+        fetch(`/list?${query}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Network response was not ok");
