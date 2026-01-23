@@ -5,9 +5,11 @@ module Searchable
         def search(query)
             return all if query.blank?
 
+            treshold = query.length < 5 ? 0.1 : 0.3
+
             query_downcased = query.downcase.strip
       
-            results = where("similarity(title, ?) > 0.3", query_downcased)
+            results = where("similarity(title, ?) > ?", query_downcased, treshold)
                         .order(Arel.sql("similarity(title, #{connection.quote(query_downcased)}) DESC"))
             
             # Search platform enum (matches partial or full names)
