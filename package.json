@@ -8,7 +8,8 @@
     "react-router-dom": "^7.12.0"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets --loader:.js=jsx --watch"
+    "build": "esbuild app/javascript/application.jsx --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets --loader:.js=jsx --loader:.png=file --loader:.jpg=file --loader:.svg=file",
+    "build:watch": "esbuild app/javascript/application.jsx --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets --loader:.js=jsx --loader:.png=file --loader:.jpg=file --loader:.svg=file --watch"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.23",
