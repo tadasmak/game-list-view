@@ -13,12 +13,12 @@ module Searchable
                         .order(Arel.sql("similarity(title, #{connection.quote(query_downcased)}) DESC"))
             
             # Search platform enum (matches partial or full names)
-            matching_platforms = platforms.keys.select { |key| key.to_s.downcase.include?(query_downcased) }
+            matching_platforms = platforms.keys.select { |key| key.to_s.gsub('_', ' ').downcase.include?(query_downcased) }
             results = results.or(where(platform: matching_platforms)) if matching_platforms.any?
             
             # Search region enum
-            matching_regions = regions.keys.select { |key| key.to_s.downcase.include?(query_downcased) }
-            results = results.or(where(region: matching_platforms)) if matching_platforms.any?
+            matching_regions = regions.keys.select { |key| key.to_s.gsub('_', ' ').downcase.include?(query_downcased) }
+            results = results.or(where(region: matching_regions)) if matching_regions.any?
             
             results
         end
