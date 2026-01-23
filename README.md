@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Game List Search App
 
-Things you may want to cover:
+Web application that displays a list of games with fuzzy search support.
 
-* Ruby version
+## Tech Stack
+- React.js
+- Ruby on Rails
+- PostgreSQL
 
-* System dependencies
+## Features
+- Game listing via /list API
+- Fuzzy search via /list?search=
+- Responsive UI based on provided design
 
-* Configuration
+## Live Demo
+https://game-list-view.onrender.com/
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## AI Usage
+AI tools were used during development.
+Prompt history:
+- Backend (Claude): …
+- Frontend & deployment (Claude): …
+- Misc (ChatGPT): …
