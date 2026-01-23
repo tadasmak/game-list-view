@@ -35,7 +35,7 @@ export default function SearchBar() {
                 placeholder="Search games..."
                 className="w-full h-3/4 text-lg font-bold focus:outline-none"
             />
-            <div className="ml-auto mr-3">
+            <div onClick={() => setSearchQuery("")} className="ml-auto mr-3">
                 <XIcon height={24} width={24} />
             </div>
         </form>
