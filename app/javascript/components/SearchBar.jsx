@@ -31,9 +31,9 @@ export default function SearchBar() {
     }
     
     return (
-        <form onSubmit={handleSubmit} className="flex flex-1 h-14 justify-center items-center border-solid border-1 border-white">
+        <form onSubmit={handleSubmit} className="flex flex-1 h-10 md:h-14 justify-center items-center border-solid border-1 border-white">
             <button type="submit" className="cursor-pointer">
-                <SearchIcon className="mx-3" height={28} width={28} />
+                <SearchIcon className="mx-1 md:mx-3 h-[18px] md:h-[28px]" />
             </button>
             <input
                 type="text"
@@ -41,10 +41,10 @@ export default function SearchBar() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search games..."
-                className="w-full h-3/4 text-lg font-bold focus:outline-none"
+                className="w-full h-3/4 text-sm md:text-lg font-bold focus:outline-none"
             />
-            <div onClick={clearSearch} className="ml-auto mr-3">
-                <XIcon height={24} width={24} />
+            <div onClick={clearSearch} className="ml-auto mr-1 md:mr-3">
+                <XIcon className="h-[16px] md:h-[24px]" />
             </div>
         </form>
     );
