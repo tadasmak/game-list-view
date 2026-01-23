@@ -13,7 +13,7 @@ export default function GamesList() {
         setLoading(true);
 
         const params = {
-            query: searchParams.get("query") || ""
+            search: searchParams.get("search") || ""
         }
 
         const query = new URLSearchParams(params).toString();
