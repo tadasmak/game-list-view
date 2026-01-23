@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_01_20_231419) do
+ActiveRecord::Schema[8.0].define(version: 2026_01_23_114113) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+  enable_extension "pg_trgm"
 
   create_table "games", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -29,6 +30,6 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_20_231419) do
     t.integer "likes_count", default: 0, null: false
     t.index ["platform"], name: "index_games_on_platform"
     t.index ["region"], name: "index_games_on_region"
-    t.index ["title"], name: "index_games_on_title"
+    t.index ["title"], name: "index_games_on_title", opclass: :gin_trgm_ops, using: :gin
   end
 end
